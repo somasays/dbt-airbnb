@@ -12,4 +12,4 @@
 
 select * from {{ source('airbnb', 'listings') }}
 
-{% endsnpshot %}
+{% endsnapshot %}

@@ -1,0 +1,11 @@
+with listings as (
+    select * from {{ ref('dim_listings_cleansed') }}
+),
+reviews as (
+    select * from {{ ref('fct_reviews') }}
+)
+
+select *
+from reviews r
+left join listings l
+on r.review_date < l.created_at
